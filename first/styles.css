@@ -1,7 +1,36 @@
 
 .blue-background {
-    background-color: blue;
+    background-color: rgb(100, 100, 255);
 }
 .green-background {
-    background-color: green;
+    background-color: rgb(140, 255, 140);
 }
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+  
+  th {
+    background-color: #ccc;
+    text-align: center;
+  }
+  
+
+  tr:hover {
+    background-color: #ffffcc;
+  }
+  table {
+    border-collapse: collapse;
+    margin: auto;
+  }
+  
+
+  .currency-table{
+    width: 100%;
+    margin: auto;
+  }

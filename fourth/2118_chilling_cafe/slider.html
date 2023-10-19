@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="path/to/slick/slick.css"/>
+    <script type="text/javascript" src="path/to/jquery.js"></script>
+    <script type="text/javascript" src="path/to/slick/slick.min.js"></script>
+    
+    <style>
+        .tm-slider-item {
+        display: none;
+        }
+        .tm-special-items.tm-slider{
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+       <!-- Дублированный раздел "Special Items" с добавленным слайдером -->
+       <section class="tm-section">
+        <h2 class="tm-section-header">Special Items</h2>
+        <div class="tm-special-items tm-slider">
+          <div class="tm-slider-item">
+            <figure class="tm-special-item">
+              <img src="img/chilling-cafe-11.jpg" alt="Image" class="tm-special-item-img" />
+              <figcaption>
+                <span class="tm-item-name">Soft Deli Cup</span>
+                <span class="tm-item-price">$25</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="tm-slider-item">
+            <figure class="tm-special-item">
+              <img src="img/chilling-cafe-12.jpg" alt="Image" class="tm-special-item-img" />
+              <figcaption>
+                <span class="tm-item-name">Coffee Art</span>
+                <span class="tm-item-price">$30</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="tm-slider-item">
+            <figure class="tm-special-item">
+              <img src="img/chilling-cafe-13.jpg" alt="Image" class="tm-special-item-img" />
+              <figcaption>
+                <span class="tm-item-name">Speciality Tea</span>
+                <span class="tm-item-price">$35</span>
+              </figcaption>
+            </figure>
+           </div>
+        </div>
+    
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <br>
+      
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </section>
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlide(n){
+            showSlides(slideIndex+=n);
+        }
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("tm-slider-item");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+      </script>
+</body>
+</html>
